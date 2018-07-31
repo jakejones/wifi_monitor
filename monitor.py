@@ -8,4 +8,4 @@ def monitor_callback(pkt):
         return
     print pkt.time, pkt[Dot11].addr2
 
-sniff(iface='wlan0',prn=monitor_callback, store=0)
+sniff(prn=monitor_callback, store=0)

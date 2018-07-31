@@ -21,6 +21,16 @@ Step 3: Install Nexmon WiFi Driver for monitor mode.
 
 Step 4: Add the following configuration code to /etc/rc.local before the exit 0 line
 
-    sudo ifconfig wlan0 down
-    sudo nexutil -I wlan0 -m1
-    sudo ifconfig wlan0 up
+    iw phy `iw dev wlan0 info | gawk '/wiphy/ {printf "phy" $2}'` interface add mon0 type monitor
+    ifconfig mon0 up
+
+Step 5: Reboot
+
+    sudo apt-get install python-pip
+    sudo pip install 
+    sudo reboot
+
+
+###Example Usage:
+
+

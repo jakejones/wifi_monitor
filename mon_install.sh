@@ -28,3 +28,4 @@ apt-get -y remove wpasupplicant
 
 mv "$(modinfo brcmfmac -n)" "$(modinfo brcmfmac -n).orig"
 cp patches/bcm43430a1/7_45_41_46/nexmon/brcmfmac_4.14.y-nexmon/brcmfmac.ko "$(modinfo brcmfmac -n)"
+depmod -a
