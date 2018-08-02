@@ -1,0 +1,15 @@
+[Unit]
+Description=Wifi Monitor
+Requires=rc-local.service
+After=rc-local.service network.target
+
+[Service]
+ExecStart=/home/pi/wifi_monitor/run.sh
+WorkingDirectory=/home/pi/wifi_monitor/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
